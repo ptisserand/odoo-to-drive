@@ -88,8 +88,7 @@ def syncer_import(data: bytes):
     result = resp.json()
     logger.info(f"Number of missing IDs {len(result['missing_ids'])}")
 
-
-if __name__ == "__main__":
+def main():
     log_level = logging.DEBUG
     logger.setLevel(log_level)
     ch = logging.StreamHandler()
@@ -103,3 +102,7 @@ if __name__ == "__main__":
     logger.debug(f"XLS length: {len(data)}")
     syncer_import(data)
     logger.info("DONE")
+
+
+if __name__ == "__main__":
+    main()
