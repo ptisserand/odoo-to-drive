@@ -88,7 +88,7 @@ def syncer_import(data: bytes):
     result = resp.json()
     logger.info(f"Number of missing IDs {len(result['missing_ids'])}")
 
-def main():
+def main(event=None, context=None):
     log_level = logging.DEBUG
     logger.setLevel(log_level)
     ch = logging.StreamHandler()
